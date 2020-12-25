@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "MeroWineNotes - a simple Sinatra App"
-date:       2020-12-25 02:54:34 +0000
+date:       2020-12-24 21:54:34 -0500
 permalink:  merowinenotes_-_a_simple_sinatra_app
 ---
 
@@ -72,7 +72,7 @@ get '/logout' do
 end
 ```
 
-Thank you for reading my blog and checkout out my app. I hope you were able to get something useful out of it.
+Thank you for reading my blog and taking the time to checkout out my app. I hope you were able to get something useful out of it.
 
 
 
