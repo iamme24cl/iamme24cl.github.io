@@ -41,7 +41,7 @@ end
 ```
 
 
-To use the app, clone it from this repo: https://github.com/iamme24cl/mero-winenotes . Then cd into **mero-winenotes** and run **shotgun**.
+To use the app, clone it from this repo: https://github.com/iamme24cl/mero-winenotes . Then cd into **mero-winenotes** , run **bundle install** to install all dependencies, and then run **shotgun**.
 
 Shotgun is a small Ruby gem that makes it easier to develop and test Rack-based Ruby web applications locally by starting Rack with automatic code reloading.
 You should see something like this:
@@ -53,7 +53,9 @@ You should see something like this:
 ```
 The application is now loaded and being served from port **9393**, the default shotgun port. The application will respond to requests at `http://127.0.0.1:9393` or, more commonly, `localhost:9393`. Go ahead and visit `localhost:9393` in the browser. 
 
-Here you can register for a new account or log in after you create an account. This is the `get "/"` route and the homepage of the application. After logging in, you will be redirected to "/wines". During this `get` request, an instance variable `@wines` is assigned all the wines that belongs to the current user. This instance variable can then be used to display all the wines via the wines index page `erb :"/wines/index.html"`.
+Here you can register for a new account or log in after you create an account. This is the `get "/"` route and the homepage of the application. When you click on **Log In**, this will send a get request to `'/login'` which renders the log in form. The log in form submission will then send a post request to `'/login'. During this request, we find the user using `params[:email]`, and then we authenticate the user using the `.authenticate` method provided my ActiveRecord.  If the password provided by the user in the params, matches the one on file in the `password_digest` column in our database, the user is successfully logged in by assigning the `user_id` to `session[:user_id]` .  
+
+After logging in, you will be redirected to "/wines". During this `get` request, an instance variable `@wines` is assigned all the wines that belongs to the current user. This instance variable can then be used to display all the wines via the wines index page `erb :"/wines/index.html"`.
 
 When logged in, you will able to view other member's wines and profile, but you can only create, update, and delete your own account/wines, and not others. The links to all these options will be at the top navigation portion of the page.
 
