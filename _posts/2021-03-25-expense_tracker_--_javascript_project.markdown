@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Expense Tracker -- JavaScript Project"
-date:       2021-03-26 03:53:45 +0000
+date:       2021-03-25 23:53:46 -0400
 permalink:  expense_tracker_--_javascript_project
 ---
 
@@ -38,7 +38,7 @@ class Transaction {
 }
 ```
 
-2) **class Adapter**: Although this was not a requirement, I decided to try out the adpater pattern. This was a great refactor. This class aids in abstracting away the bit and bytes of fetching data from your index.js and into this class. With this class implemented, I can then use the `findByID` method from the **Transaction** class to find the transaction and construct the data needed to send **PATCH** and **DELETE** fetch requests for a transaction to our backend.
+2) **class Adapter**: Although this was not a requirement, I decided to try out the adpater pattern. This was a great refactor. This class aids in abstracting away the bit and bytes of fetching data from your index.js and into this class. With this class implemented, I can then use the `findByID` method from the **Transaction** class to find the transaction, and construct the data needed to send **PATCH** and **DELETE** fetch requests for a transaction to our backend.
 
 3) **class App** -- This class is where most of the functionality of the application lies. All the Event Listeners for the app are defined in here, and most of the functions necessary to run the application are also defined in here.
 After creating this class, I can iniliaze a new instance of the **App** class in my `index.js` file when the DOM has completed loading. I then call the function to attatch all the Event Listeners to the respective nodes, and the function to fetch all the existing transactions from the backend, and create new instances of them like so:
