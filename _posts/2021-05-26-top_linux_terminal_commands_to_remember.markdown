@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Top Linux Terminal Commands to remember"
-date:       2021-05-26 22:01:44 +0000
+title:      "Linux Terminal Commands "
+date:       2021-05-26 18:01:44 -0400
 permalink:  top_linux_terminal_commands_to_remember
 ---
 
